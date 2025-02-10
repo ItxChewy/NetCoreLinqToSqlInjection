@@ -1,0 +1,20 @@
+﻿@model ICoche
+
+<div class="container">
+	<h1>Dependency Injection</h1>
+	<div class="container">
+		<h3>@Model.Marca @Model.Modelo</h3>
+		<img src="~/images/@Model.Imagen" style="width:350px;height:350px" />
+		<h5>Velocidad actual: </h5>
+		<span style="color:green">@Model.Velocidad</span>
+		<h5>Velocidad Maxima: </h5>
+		<span style="color:red">@Model.VelocidadMaxima</span>
+		<br />
+		<form method="post">
+			<button class="btn btn-lg btn-outline-dark" name="accion" value="acelerar">Acelerar</button>
+			<button class="btn btn-lg btn-outline-warning" name="accion" value="frenar">Frenar</button>
+		</form>
+	</div>
+	
+
+</div>
