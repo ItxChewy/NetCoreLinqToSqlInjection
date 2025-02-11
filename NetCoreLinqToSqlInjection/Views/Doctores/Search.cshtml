@@ -1,0 +1,43 @@
+﻿@model List<Doctor>
+
+	<div class="container">
+		<h1>Filtrar doctores por especialidad</h1>
+		<form method="post">
+			<label>Especialidad:</label>
+			<input type="text" name="especialidad" class="form-control" />
+			<br />
+			<button class="btn btn-lg btn-outline-warning">Buscar</button>
+		</form>
+		<br />
+		@if(Model != null){
+			<table class="table table-bordered table-danger">
+				<thead>
+					<tr>
+					<th>Id doctor</th>
+					<th>Apellido</th>
+					<th>Especialidad</th>
+					<th>Salario</th>
+					<th>Hospital</th>
+					</tr>
+				</thead>
+				<tbody>
+				@foreach (Doctor doctor in Model)
+				{
+					<tr>
+						<td>@doctor.IdDoctor</td>
+						<td>@doctor.Apellido</td>
+						<td>@doctor.Especialidad</td>
+						<td>@doctor.Salario</td>
+						<td>@doctor.IdHospital</td>
+					</tr>
+				}
+				</tbody>
+			</table>
+		}
+		<br />
+		<p>
+			<a asp-action="Index" asp-controller="Doctores">
+				Home
+			</a>
+		</p>
+	</div>

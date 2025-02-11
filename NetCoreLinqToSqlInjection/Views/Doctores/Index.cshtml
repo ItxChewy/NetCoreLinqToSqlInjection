@@ -1,0 +1,46 @@
+﻿@model List<Doctor>
+
+<div class="container">
+	<h1>PLANTILLA DE DOCTORES </h1>
+	<br />
+	<p>
+		<a asp-action="Create" asp-controller="Doctores">
+			Crear Doctor
+		</a>
+	</p>
+	<table class="table table-bordered table-hover table-primary">
+		<thead>
+			<tr>
+				<th>Id doctor</th>
+				<th>Apellido</th>
+				<th>Especialidad</th>
+				<th>Salario</th>
+				<th>Hospital</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(Doctor doctor in Model){
+				<tr>
+					<td>@doctor.IdDoctor</td>
+					<td>@doctor.Apellido</td>
+					<td>@doctor.Especialidad</td>
+					<td>@doctor.Salario</td>
+					<td>@doctor.IdHospital</td>
+					<td>
+						<a asp-action="Delete" asp-controller="Doctores"
+						asp-route-iddoctor="@doctor.IdDoctor"
+						class="btn btn-sm btn-danger">
+							Eliminar
+						</a>
+						<a asp-action="Update" asp-controller="Doctores"
+						   asp-route-iddoctor="@doctor.IdDoctor"
+						   class="btn btn-sm btn-success">
+							Actualizar
+						</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,19 @@
+﻿@model Doctor
+
+<div class="container">
+	<h1>Detalles de Doctor</h1>
+	<form method="post">
+		<label>Id Doctor: </label>
+		<input type="text" name="iddoctor" value="@Model.IdDoctor" class="form-control" readonly />
+		<label>Id Hospital: </label>
+		<input type="number" name="idhospital" value="@Model.IdHospital" class="form-control"/>
+		<label>Apellido: </label>
+		<input type="text" name="apellido" value="@Model.Apellido" class="form-control" />
+		<label>Especialidad: </label>
+		<input type="text" name="especialidad" value="@Model.Especialidad" class="form-control" />
+		<label>Salario: </label>
+		<input type="number" name="salario" value="@Model.Salario" class="form-control" />
+		<br />
+		<button class="btn btn-lg btn-success">Update</button>
+	</form>
+</div>

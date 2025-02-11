@@ -1,9 +1,16 @@
 using NetCoreLinqToSqlInjection.Models;
+using NetCoreLinqToSqlInjection.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services
+    .AddTransient<IRepositoryDoctores, RepositoryDoctoresOracle>();
+
+//builder.Services
+//    .AddTransient<IRepositoryDoctores, RepositoryDoctoresSQLServer>();
 
 //builder.Services.AddTransient<Coche>();
 //builder.Services.AddSingleton<Coche>();
@@ -35,7 +42,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Doctores}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 
