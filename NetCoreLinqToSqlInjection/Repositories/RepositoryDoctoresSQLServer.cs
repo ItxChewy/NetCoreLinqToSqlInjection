@@ -70,7 +70,7 @@ namespace NetCoreLinqToSqlInjection.Repositories
         public List<Doctor> DoctoresPorEspecialidad(string especialidad)
         {
             var consulta = from datos in this.tableDoctores.AsEnumerable()
-                           where datos.Field<string>("ESPECIALIDAD") == especialidad
+                           where datos.Field<string>("ESPECIALIDAD").ToUpper() == especialidad.ToUpper()
                            select datos;
             List<Doctor> doctores = new List<Doctor>();
             foreach(var row in consulta)
